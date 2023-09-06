@@ -107,6 +107,9 @@ vendor.display.enable_optimize_refresh=0
 vendor.display.idle_time=0
 vendor.display.vds_allow_hwc=0
 
+# DisplayFeature
+persist.sys.sf.native_mode=256
+
 # DPM
 persist.vendor.dpm.vndr.feature=1
 persist.vendor.dpm.vndr.halservice.enable=1
