@@ -17,6 +17,7 @@ $(call inherit-product, device/xiaomi/garnet/device.mk)
 
 # YAAP Flags
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BUILD_GAPPS := true
 
 PRODUCT_NAME := yaap_garnet
 PRODUCT_DEVICE := garnet
