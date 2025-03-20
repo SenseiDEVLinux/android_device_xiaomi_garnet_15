@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # Platform
- TARGET_BOARD_PLATFORM := qcom
+ TARGET_BOARD_PLATFORM := parrot
 
 # API
 BOARD_SHIPPING_API_LEVEL := 31
