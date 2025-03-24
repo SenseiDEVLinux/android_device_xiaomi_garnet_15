@@ -19,6 +19,7 @@ type thermal_data_file, data_file_type, file_type;
 type vendor_mac_vendor_data_file, data_file_type, file_type, mlstrustedobject;
 
 # XiaomiParts
+type parts_app, sysfs_type, fs_type;
 type vendor_sysfs_thermal, data_file_type, sysfs_type; 
 type sysfs_therm, fs_type, sysfs_type;
 type vendor_sysfs_displayfeature, fs_type, sysfs_type;
