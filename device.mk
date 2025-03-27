@@ -522,6 +522,13 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# USB Debugging
+ PRODUCT_PROPERTY_OVERRIDES += \
+     persist.sys.usb.config=mtp,adb \
+     ro.adb.secure=0 \
+     ro.secure=0 \
+     ro.debuggable=1
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti:64 \
