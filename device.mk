@@ -534,12 +534,14 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
-# USB Debugging
- PRODUCT_PROPERTY_OVERRIDES += \
-     persist.sys.usb.config=mtp,adb \
-     ro.adb.secure=0 \
-     ro.secure=0 \
-     ro.debuggable=1
+# ADB on boot
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.usb.config=mtp,adb
 
 # USB
 PRODUCT_PACKAGES += \
