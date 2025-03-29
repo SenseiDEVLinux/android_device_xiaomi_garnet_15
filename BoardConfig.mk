@@ -8,6 +8,7 @@ DEVICE_PATH := device/xiaomi/garnet
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Inherit from proprietary files for miuicamera
 -include device/xiaomi/miuicamera-garnet/BoardConfig.mk
@@ -138,9 +139,6 @@ PRODUCT_COPY_FILES += \
 DLKM_MODULES_PATH := $(PREBUILT_PATH)/modules/dlkm
 RAMDISK_MODULES_PATH := $(PREBUILT_PATH)/modules/ramdisk
 
-# HAL
-TARGET_HALS_PATH := hardware/qcom-caf/sm8450
-
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DLKM_MODULES_PATH)/*.ko)
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(patsubst %,$(DLKM_MODULES_PATH)/%,$(shell cat $(DLKM_MODULES_PATH)/modules.load))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DLKM_MODULES_PATH)/modules.blocklist
@@ -207,6 +205,8 @@ ENABLE_VENDOR_RIL_SERVICE := true
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 # System properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
